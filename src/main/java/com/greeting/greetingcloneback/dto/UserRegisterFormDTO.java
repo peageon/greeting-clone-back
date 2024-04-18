@@ -6,6 +6,8 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+//How does @ResponseBody work without a setter and constructor?
+//https://tecoble.techcourse.co.kr/post/2021-05-11-requestbody-modelattribute/
 @Getter
 @NoArgsConstructor
 public class UserRegisterFormDTO {

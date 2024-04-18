@@ -1,7 +1,7 @@
 package com.greeting.greetingcloneback.controller;
 
 import com.greeting.greetingcloneback.dto.UserRegisterFormDTO;
-import com.greeting.greetingcloneback.model.User;
+import com.greeting.greetingcloneback.entity.UserEntity;
 import com.greeting.greetingcloneback.service.UserService;
 import jakarta.persistence.EntityExistsException;
 import jakarta.validation.Valid;
@@ -35,8 +35,8 @@ public class UserController {
         }
 
         try {
-            User newUser = userService.create(userRegisterForm);
-            return ResponseEntity.ok().body(newUser);
+            UserEntity newUserEntity = userService.create(userRegisterForm);
+            return ResponseEntity.ok().body(newUserEntity);
         } catch (EntityExistsException e) {
             // Handle the case where a user with the provided email already exists
             Map<String, String> error = new HashMap<>();

@@ -1,7 +1,6 @@
-package com.greeting.greetingcloneback.model;
+package com.greeting.greetingcloneback.entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
@@ -14,13 +13,17 @@ import lombok.*;
 @ToString
 @Entity
 @Table(name="users")
-public class User {
+public class UserEntity {
 
-    @Id @GeneratedValue
-    private long id;
+    @Id
     private String email;
     private String password;
     private String firstname;
     private String lastname;
+    private String role;
+
+    public String getRole() {
+        return "ROLE_USER";
+    }
 
 }
